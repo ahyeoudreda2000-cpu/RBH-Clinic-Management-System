@@ -21,6 +21,7 @@
     "framer-motion": "^11.0.8",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^0.359.0",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
