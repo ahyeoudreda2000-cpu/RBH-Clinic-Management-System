@@ -45,7 +45,7 @@ const Booking = () => {
 
     const fetchUserAppointment = async (fullName) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/appointments/my/${encodeURIComponent(fullName)}`);
+            const response = await fetch(`/api/appointments/my/${encodeURIComponent(fullName)}`);
             if (response.ok) {
                 const data = await response.json();
                 if (data && data.length > 0) {
@@ -83,7 +83,7 @@ const Booking = () => {
         const appointmentDate = `${format(selectedDate, 'yyyy-MM-dd')} ${selectedTime}`;
 
         try {
-            const response = await fetch('http://localhost:5000/api/appointments', {
+            const response = await fetch('/api/appointments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

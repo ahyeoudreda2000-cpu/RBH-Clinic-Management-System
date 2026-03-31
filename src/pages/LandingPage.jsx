@@ -11,7 +11,7 @@ const LandingPage = () => {
         const fetchOnlineUsers = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://localhost:5000/api/status/active-users', {
+                const response = await fetch('/api/status/active-users', {
                     headers: {
                         'Authorization': token ? `Bearer ${token}` : ''
                     }

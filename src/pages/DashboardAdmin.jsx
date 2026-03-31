@@ -24,21 +24,21 @@ const DashboardAdmin = () => {
         setLoading(true);
         try {
             // Fetch appointments
-            const resAppt = await fetch('http://localhost:5000/api/appointments');
+            const resAppt = await fetch('/api/appointments');
             if (resAppt.ok) {
                 const dataAppt = await resAppt.json();
                 setAppointments(dataAppt);
             }
 
             // Fetch users
-            const resUsers = await fetch('http://localhost:5000/api/auth/users');
+            const resUsers = await fetch('/api/auth/users');
             if (resUsers.ok) {
                 const dataUsers = await resUsers.json();
                 setUsers(dataUsers);
             }
 
             // Fetch active stats
-            const resStats = await fetch('http://localhost:5000/api/status/active-users');
+            const resStats = await fetch('/api/status/active-users');
             if (resStats.ok) {
                 const dataStats = await resStats.json();
                 // Somme des visiteurs et des patients pour le total "Actifs"
@@ -63,7 +63,7 @@ const DashboardAdmin = () => {
         if (window.confirm("Supprimer ce rendez-vous ?")) {
             setAppointments(appointments.filter(app => app.id !== id));
             try {
-                await fetch(`http://localhost:5000/api/appointments/${id}`, { method: 'DELETE' });
+                await fetch(`/api/appointments/${id}`, { method: 'DELETE' });
             } catch (error) { }
         }
     };
